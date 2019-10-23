@@ -1,0 +1,687 @@
+SEVELUCH-M-R0YB:hub seveluch$ !138 &
+docker run -p 4000:80 meencloud/hello-visits &
+[1] 60818
+SEVELUCH-M-R0YB:hub seveluch$  * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ 172.17.0.1 - - [12/Nov/2018 07:39:32] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [12/Nov/2018 07:39:32] "GET /favicon.ico HTTP/1.1" 404 -
+
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ docker ps
+CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                  NAMES
+201e14be5e06        meencloud/hello-visits   "python app.py"     14 seconds ago      Up 13 seconds       0.0.0.0:4000->80/tcp   romantic_borg
+SEVELUCH-M-R0YB:hub seveluch$ docker exec -it 201e14be5e06 bash
+root@201e14be5e06:/app# ifconfig
+bash: ifconfig: command not found
+root@201e14be5e06:/app# env
+LANG=C.UTF-8
+HOSTNAME=201e14be5e06
+GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF
+PYTHONIOENCODING=UTF-8
+PWD=/app
+HOME=/root
+NAME=World
+TERM=xterm
+PYTHON_VERSION=2.7.15
+SHLVL=1
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PYTHON_PIP_VERSION=18.1
+_=/usr/bin/env
+root@201e14be5e06:/app# route
+bash: route: command not found
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+172.17.0.2	201e14be5e06
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# pwd
+/app
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# pwd
+/app
+root@201e14be5e06:/app# exit
+exit
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ docker ps
+CONTAINER ID        IMAGE                    COMMAND             CREATED              STATUS              PORTS                  NAMES
+201e14be5e06        meencloud/hello-visits   "python app.py"     About a minute ago   Up About a minute   0.0.0.0:4000->80/tcp   romantic_borg
+SEVELUCH-M-R0YB:hub seveluch$ docker network connect my-bridge 201e14be5e06
+SEVELUCH-M-R0YB:hub seveluch$ docker exec -it 201e14be5e06 bash
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+172.17.0.2	201e14be5e06
+172.18.0.2	201e14be5e06
+root@201e14be5e06:/app# 172.17.0.1 - - [12/Nov/2018 07:41:13] "GET / HTTP/1.1" 200 -
+                                                                                    172.17.0.1 - - [12/Nov/2018 07:41:13] "GET /favicon.ico HTTP/1.1" 404 -
+     172.17.0.1 - - [12/Nov/2018 07:41:13] "GET / HTTP/1.1" 200 -
+                                                                 172.17.0.1 - - [12/Nov/2018 07:41:13] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:13] "GET / HTTP/1.1" 200 -
+                                              172.17.0.1 - - [12/Nov/2018 07:41:13] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                     172.17.0.1 - - [12/Nov/2018 07:41:13] "GET / HTTP/1.1" 200 -
+                           172.17.0.1 - - [12/Nov/2018 07:41:13] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                  172.17.0.1 - - [12/Nov/2018 07:41:13] "GET / HTTP/1.1" 200 -
+        172.17.0.1 - - [12/Nov/2018 07:41:13] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                               172.17.0.1 - - [12/Nov/2018 07:41:14] "GET / HTTP/1.1" 200 -
+                                                                                                                                           172.17.0.1 - - [12/Nov/2018 07:41:14] "GET /favicon.ico HTTP/1.1" 404 -
+                                                            172.17.0.1 - - [12/Nov/2018 07:41:14] "GET / HTTP/1.1" 200 -
+                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:14] "GET /favicon.ico HTTP/1.1" 404 -
+                                         172.17.0.1 - - [12/Nov/2018 07:41:14] "GET / HTTP/1.1" 200 -
+                                                                                                     172.17.0.1 - - [12/Nov/2018 07:41:14] "GET /favicon.ico HTTP/1.1" 404 -
+
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# 172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                                                                    172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+     172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                                                 172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                              172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                     172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                           172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                  172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+        172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                               172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                                                                                                                                           172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                            172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+172.17.0.2	201e14be5e06
+172.18.0.2	201e14be5e06
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# exit
+exit
+SEVELUCH-M-R0YB:hub seveluch$ docker network --help
+
+Usage:	docker network COMMAND
+
+Manage networks
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+Run 'docker network COMMAND --help' for more information on a command.
+SEVELUCH-M-R0YB:hub seveluch$ docker network disconnect --help
+
+Usage:	docker network disconnect [OPTIONS] NETWORK CONTAINER
+
+Disconnect a container from a network
+
+Options:
+  -f, --force   Force the container to disconnect from a network
+SEVELUCH-M-R0YB:hub seveluch$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+96b303a68c4f        bridge              bridge              local
+b32511bd1e00        host                host                local
+c8a13a27a998        my-bridge           bridge              local
+56dc8addf783        none                null                local
+SEVELUCH-M-R0YB:hub seveluch$ docker network disconnect 96b303a68c4f 201e14be5e06
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ 172.18.0.1 - - [12/Nov/2018 07:42:34] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ docker rm 201e14be5e06
+Error response from daemon: You cannot remove a running container 201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310. Stop the container before attempting removal or force remove
+SEVELUCH-M-R0YB:hub seveluch$ docker stop 201e14be5e06
+
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# 172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                                                                    172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+     172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                                                 172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:21] "GET / HTTP/1.1" 200 -
+                                              172.17.0.1 - - [12/Nov/2018 07:41:21] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                                     172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                           172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                                                  172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+        172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                                               172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                                                                                                                                           172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+                                                            172.17.0.1 - - [12/Nov/2018 07:41:22] "GET / HTTP/1.1" 200 -
+                                                                                                                        172.17.0.1 - - [12/Nov/2018 07:41:22] "GET /favicon.ico HTTP/1.1" 404 -
+
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+172.17.0.2	201e14be5e06
+172.18.0.2	201e14be5e06
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# exit
+exit
+SEVELUCH-M-R0YB:hub seveluch$ docker network --help
+
+Usage:	docker network COMMAND
+
+Manage networks
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+Run 'docker network COMMAND --help' for more information on a command.
+SEVELUCH-M-R0YB:hub seveluch$ docker network disconnect --help
+
+Usage:	docker network disconnect [OPTIONS] NETWORK CONTAINER
+
+Disconnect a container from a network
+
+Options:
+  -f, --force   Force the container to disconnect from a network
+SEVELUCH-M-R0YB:hub seveluch$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+96b303a68c4f        bridge              bridge              local
+b32511bd1e00        host                host                local
+c8a13a27a998        my-bridge           bridge              local
+56dc8addf783        none                null                local
+SEVELUCH-M-R0YB:hub seveluch$ docker network disconnect 96b303a68c4f 201e14be5e06
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ 172.18.0.1 - - [12/Nov/2018 07:42:34] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:34] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [12/Nov/2018 07:42:35] "GET /favicon.ico HTTP/1.1" 404 -
+
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ docker rm 201e14be5e06
+Error response from daemon: You cannot remove a running container 201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310. Stop the container before attempting removal or force remove
+SEVELUCH-M-R0YB:hub seveluch$ docker stop 201e14be5e06
+201e14be5e06
+SEVELUCH-M-R0YB:hub seveluch$
+[1]+  Exit 137                docker run -p 4000:80 meencloud/hello-visits
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ docker start 201e14be5e06
+201e14be5e06
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$
+SEVELUCH-M-R0YB:hub seveluch$ ls
+friendlyhello	hello-visits	hellonode
+SEVELUCH-M-R0YB:hub seveluch$ cd hello-visits/
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ ci app.py
+-bash: ci: command not found
+SEVELUCH-M-R0YB:hello-visits seveluch$ cat app.py
+from flask import Flask
+from redis import Redis, RedisError
+import os
+import socket
+import random
+# Connect to Redis
+redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    try:
+        visits = redis.incr("counter")
+    except RedisError:
+        visits = "<i>cannot connect to Redis, counter disabled</i>"
+
+    version = 'latest'
+    html = "<h3>Hello {name}!</h3>" \
+           "<b>Hostname:</b> {hostname}<br/>" \
+           "<b>Visits:</b> {visits}<br/>" \
+           "<b>Version:</b> {version}<br/>" \
+           "<b>Random Number :</b> {random_number}"
+    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits , version=version, random_number = random.randint(1,1000000))
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
+
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ pwd
+/Users/seveluch/Documents/DEVOPS/docker/hub/hello-visits
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker inspect 201e14be5e06
+[
+    {
+        "Id": "201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310",
+        "Created": "2018-11-12T07:39:25.553705Z",
+        "Path": "python",
+        "Args": [
+            "app.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 3425,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2018-11-12T08:34:32.8752022Z",
+            "FinishedAt": "2018-11-12T07:43:08.1205963Z"
+        },
+        "Image": "sha256:0eb56a057100bdb79e2fcc2f64d8bdd371b1b26488e120b13ae0cd1232163b2d",
+        "ResolvConfPath": "/var/lib/docker/containers/201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310/hostname",
+        "HostsPath": "/var/lib/docker/containers/201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310/hosts",
+        "LogPath": "/var/lib/docker/containers/201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310/201e14be5e06183ff76bec99dfdd56ed604590862bb8c46797098d8073b02310-json.log",
+        "Name": "/romantic_borg",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "4000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "shareable",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DiskQuota": 0,
+            "KernelMemory": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": 0,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/asound",
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/e4e90222ebf2962c08dd17064bf2c5becc39abab82d00bdbc495251714f9d64c-init/diff:/var/lib/docker/overlay2/9c3d3e8ec111a6bfcd0d94ecbc2938b274fcc3975d5f4d05fb124159889ca624/diff:/var/lib/docker/overlay2/85224f975dab3807069fbad42b768f018dcf7f035dad9560a79b221c9eb2fade/diff:/var/lib/docker/overlay2/bce7b6dd9d8ee18681beb205f0a13c9fe94c67e2e13718c76525ba7e78488274/diff:/var/lib/docker/overlay2/1e14afad4c97281d8a1905869fcfa52b87ae93b118e263af7846cf842dc31b22/diff:/var/lib/docker/overlay2/69344509eba2f79efd8e3508d55d7f73b79c462a4d19c8094b7420a7cf44c8c1/diff:/var/lib/docker/overlay2/7dee32ec34ae05d69407ab17d4a9e7bd4ba25e1ad7c83f138b2cfcaf84782157/diff:/var/lib/docker/overlay2/bc8d2a6a2e915cedca08576f5ab7d78e0194786886ce52efc33d545b0c5bb7ed/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e4e90222ebf2962c08dd17064bf2c5becc39abab82d00bdbc495251714f9d64c/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e4e90222ebf2962c08dd17064bf2c5becc39abab82d00bdbc495251714f9d64c/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e4e90222ebf2962c08dd17064bf2c5becc39abab82d00bdbc495251714f9d64c/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "201e14be5e06",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "PYTHONIOENCODING=UTF-8",
+                "GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF",
+                "PYTHON_VERSION=2.7.15",
+                "PYTHON_PIP_VERSION=18.1",
+                "NAME=World"
+            ],
+            "Cmd": [
+                "python",
+                "app.py"
+            ],
+            "ArgsEscaped": true,
+            "Image": "meencloud/hello-visits",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "c25166854ad4ce325fe630bc9b4750832d13e61fb7ed9be125623818aa19ac65",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "4000"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/c25166854ad4",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "my-bridge": {
+                    "IPAMConfig": {},
+                    "Links": null,
+                    "Aliases": [
+                        "201e14be5e06"
+                    ],
+                    "NetworkID": "c8a13a27a998b8baf13ecdf81cd91c51c25b0583fd6df241680d115bb85cff76",
+                    "EndpointID": "7ffe797eddfbd08a784a10bd909bb59118770fda6179d17b4bc5a4fb80cac9e2",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker network disconnect my-bridge 201e14be5e06
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ curl localhost:4000
+curl: (7) Failed to connect to localhost port 4000: Connection refused
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker network connect my-bridge 201e14be5e06
+SEVELUCH-M-R0YB:hello-visits seveluch$ curl localhost:4000
+<h3>Hello World!</h3><b>Hostname:</b> 201e14be5e06<br/><b>Visits:</b> <i>cannot connect to Redis, counter disabled</i><br/><b>Version:</b> latest<br/><b>Random Number :</b> 513542SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ curl localhost:4000
+<h3>Hello World!</h3><b>Hostname:</b> 201e14be5e06<br/><b>Visits:</b> <i>cannot connect to Redis, counter disabled</i><br/><b>Version:</b> latest<br/><b>Random Number :</b> 229378SEVELUCH-M-R0YB:hello-visits seveluch$ \
+>
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it 201e14be5e06 bash
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+172.18.0.2	201e14be5e06
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app#
+root@201e14be5e06:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker network disconnect my-bridge 201e14be5e06
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it 201e14be5e06 bash
+root@201e14be5e06:/app# cat /etc/hosts
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+root@201e14be5e06:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker network connect my-bridge 201e14be5e06
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker rm --force 201e14be5e06
+201e14be5e06
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker ps --all
+CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS                    PORTS                  NAMES
+f59912f6706a        meencloud/hello-visits       "python app.py"     2 hours ago         Exited (0) 2 hours ago                           ecstatic_darwin
+46e4459c10d0        meencloud/hello-visits       "python app.py"     2 days ago          Exited (255) 2 days ago   0.0.0.0:4000->80/tcp   stoic_bhabha
+0e3e96f917dc        meencloud/hello-visits       "python app.py"     2 days ago          Exited (0) 2 days ago                            elastic_newton
+5cbb9f5b2979        meencloud/hello-visits:v6    "python app.py"     5 days ago          Exited (0) 5 days ago                            upbeat_hodgkin
+f7e176db6200        hello-visits                 "python app.py"     5 days ago          Exited (0) 5 days ago                            inspiring_brown
+f40aa097db9a        4d73b644da90                 "python app.py"     5 days ago          Exited (0) 5 days ago                            zealous_lewin
+d5422150033e        4d73b644da90                 "python app.py"     5 days ago          Exited (0) 5 days ago                            romantic_snyder
+59698d100d86        4a4a7b8c3310                 "python app.py"     7 days ago          Exited (0) 7 days ago                            affectionate_benz
+308cd191c085        4a4a7b8c3310                 "-p 4000:80"        7 days ago          Created                   80/tcp                 laughing_kare
+4c12bf97bfee        4a4a7b8c3310                 "python app.py"     7 days ago          Exited (0) 7 days ago                            xenodochial_nightingale
+943399d0951f        9d8a739e3d95                 "python app.py"     7 days ago          Exited (1) 7 days ago                            angry_wright
+27ee413d7054        9d8a739e3d95                 "python app.py"     7 days ago          Exited (1) 7 days ago                            dreamy_hopper
+88272ec98a20        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 flamboyant_ptolemy
+d15e9f4f25d8        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 confident_kalam
+fb093ab7e80c        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 goofy_chatterjee
+0d0845f70309        hello-world                  "/hello"            7 days ago          Exited (0) 7 days ago                            affectionate_dubinsky
+4ac55767cc1b        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 flamboyant_bassi
+d1d781ba7c95        meencloud/hello-visits:v3    "-p 4000:80"        7 days ago          Created                   80/tcp                 determined_easley
+0736200a53ef        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 nervous_mccarthy
+2b8642fb0ee2        9d8a739e3d95                 "-p 4000:80"        7 days ago          Created                   80/tcp                 awesome_mendeleev
+fdba69f1f10b        meencloud/friendlyhello:v3   "python app.py"     7 days ago          Exited (0) 7 days ago                            festive_allen
+310c32289c36        3faab8fb151b                 "python app.py"     7 days ago          Exited (0) 7 days ago                            stupefied_curie
+d0f511ce9e27        node                         "node"              7 days ago          Exited (0) 7 days ago                            eloquent_pasteur
+d3cee93b065d        meencloud/friendlyhello:v3   "python app.py"     7 days ago          Exited (0) 7 days ago                            wonderful_feynman
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker ps -aq
+f59912f6706a
+46e4459c10d0
+0e3e96f917dc
+5cbb9f5b2979
+f7e176db6200
+f40aa097db9a
+d5422150033e
+59698d100d86
+308cd191c085
+4c12bf97bfee
+943399d0951f
+27ee413d7054
+88272ec98a20
+d15e9f4f25d8
+fb093ab7e80c
+0d0845f70309
+4ac55767cc1b
+d1d781ba7c95
+0736200a53ef
+2b8642fb0ee2
+fdba69f1f10b
+310c32289c36
+d0f511ce9e27
+d3cee93b065d
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker ps -aq
+f59912f6706a
+46e4459c10d0
+0e3e96f917dc
+5cbb9f5b2979
+f7e176db6200
+f40aa097db9a
+d5422150033e
+59698d100d86
+308cd191c085
+4c12bf97bfee
+943399d0951f
+27ee413d7054
+88272ec98a20
+d15e9f4f25d8
+fb093ab7e80c
+0d0845f70309
+4ac55767cc1b
+d1d781ba7c95
+0736200a53ef
+2b8642fb0ee2
+fdba69f1f10b
+310c32289c36
+d0f511ce9e27
+d3cee93b065d
+SEVELUCH-M-R0YB:hello-visits seveluch$

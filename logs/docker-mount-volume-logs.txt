@@ -1,0 +1,102 @@
+SEVELUCH-M-R0YB:hello-visits seveluch$ !187
+docker run -d -it --name devtest --mount type=bind,source="$(pwd),target=/app" nginx:latest
+8283858f62efcc1babad6a84704b9eea2fd6a11a67f2833f26bf96f1f0267cac
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ !190
+docker -it exec devtest bash
+unknown shorthand flag: 'i' in -it
+SEVELUCH-M-R0YB:hello-visits seveluch$ !191
+docker exec -it devtest bash
+root@8283858f62ef:/# echo "dummy" > dummy.txt
+root@8283858f62ef:/# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker rm --force devtest
+devtest
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker run -d -it --name devtest --mount type=bind,source="$(pwd),target=/app" nginx:latest
+ed536709d66b2d758c6e8fe25b84b2ffade22217979943dd56f4f3a722747f12
+SEVELUCH-M-R0YB:hello-visits seveluch$ !191
+docker exec -it devtest bash
+root@ed536709d66b:/# ls
+app  bin  boot	dev  etc  home	lib  lib64  media  mnt	opt  proc  root  run  sbin  srv  sys  tmp  usr	var
+root@ed536709d66b:/# cd /app/
+root@ed536709d66b:/app# ls
+Dockerfile  app.py  requirements.txt
+root@ed536709d66b:/app# echo "dummy" > dummy.txt
+root@ed536709d66b:/app# ls
+Dockerfile  app.py  dummy.txt  requirements.txt
+root@ed536709d66b:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			dummy.txt		requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ rm -rf dummy.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it devtest bash
+root@ed536709d66b:/# cd /app/
+root@ed536709d66b:/app# ls
+Dockerfile  app.py  requirements.txt
+root@ed536709d66b:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker rm --force devtest
+devtest
+SEVELUCH-M-R0YB:hello-visits seveluch$
+
+
+
+
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker run -d -it --name devtest -v $(pwd):/app nginx:latest
+961afa9c5e36e45e36ddaaa95b311daac09f294b31397ed023675a96b9cc4ff7
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it devtest bash
+root@961afa9c5e36:/# ls
+app  bin  boot	dev  etc  home	lib  lib64  media  mnt	opt  proc  root  run  sbin  srv  sys  tmp  usr	var
+root@961afa9c5e36:/# cd /app/
+root@961afa9c5e36:/app# ls
+Dockerfile  app.py  requirements.txt
+root@961afa9c5e36:/app# echo "Dummy" > dummy.txt
+root@961afa9c5e36:/app# ls
+Dockerfile  app.py  dummy.txt  requirements.txt
+root@961afa9c5e36:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			dummy.txt		requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ cat dummy.txt
+Dummy
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			dummy.txt		requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ rm -rf dummy.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it devtest ls /app
+Dockerfile  app.py  requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$
+
+
+
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker run -d -it --name devtest -v $(pwd):/app:ro nginx:latest
+d1db427435807258b0a138cf217ff5f070d1ff5f0b84e34695f75fa637dc8043
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$
+SEVELUCH-M-R0YB:hello-visits seveluch$ ls
+Dockerfile		app.py			requirements.txt
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker exec -it devtest bash
+root@d1db42743580:/# ls
+app  bin  boot	dev  etc  home	lib  lib64  media  mnt	opt  proc  root  run  sbin  srv  sys  tmp  usr	var
+root@d1db42743580:/# cd /app/
+root@d1db42743580:/app# ls
+Dockerfile  app.py  requirements.txt
+root@d1db42743580:/app# echo "asdsa" > dummy.txt
+bash: dummy.txt: Read-only file system
+root@d1db42743580:/app# exit
+exit
+SEVELUCH-M-R0YB:hello-visits seveluch$ docker rm --force devtest
+devtest
+SEVELUCH-M-R0YB:hello-visits seveluch$
